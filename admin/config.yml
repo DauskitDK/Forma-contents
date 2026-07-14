@@ -1,0 +1,87 @@
+backend:
+  name: github
+  repo: DauskitDK/Forma-Content
+  branch: main
+  base_url: https://forma-content.vercel.app
+  auth_endpoint: api/begin
+  squash_merges: true
+
+publish_mode: editorial_workflow
+
+media_folder: "syndicate/assets"
+public_folder: "/syndicate/assets"
+
+collections:
+  # ===================================================================
+  # SYNDICATE
+  # ===================================================================
+  - name: "syndicate-products"
+    label: "Syndicate — Products"
+    label_singular: "Product"
+    description: "Syndicate product catalog — add, edit, reorder, or archive products"
+    editor:
+      preview: false
+    files:
+      - name: "products"
+        label: "All Products"
+        file: "syndicate/products.json"
+        description: "Master product list (JSON array)"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            hint: "Drag to reorder. Remove a product to archive it."
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int", min: 1 }
+              - { label: "Name", name: "name", widget: "string", pattern: [".{3,}", "Must be at least 3 characters"] }
+              - { label: "Price (display)", name: "price", widget: "string", hint: "e.g. RM 380" }
+              - { label: "Price (numeric)", name: "priceNum", widget: "number", hint: "Number only, for sorting — e.g. 380" }
+              - { label: "Original Price (display)", name: "originalPrice", widget: "string", required: false, hint: "Leave blank if not on sale" }
+              - { label: "Original Price (numeric)", name: "originalPriceNum", widget: "number", required: false, value_type: "int" }
+              - { label: "Category", name: "category", widget: "select", options: ["Outerwear", "Casuals", "Accessories", "Headwear"] }
+              - { label: "Badge", name: "badge", widget: "select", options: ["", "new", "sale"], required: false, default: "" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Available Sizes", name: "sizes", widget: "list", hint: "e.g. S, M, L, XL — or ONE SIZE" }
+              - { label: "Size Guide Image", name: "sizeGuide", widget: "image" }
+              - { label: "Grid / Thumbnail Image", name: "img", widget: "image", hint: "Shown in bento grid on homepage" }
+              - { label: "Gallery Images", name: "imgs", widget: "list", field: { label: "Image URL", name: "src", widget: "image" }, hint: "Up to 5 product photos for the detail gallery" }
+              - { label: "Product View — Front", name: "productFront", widget: "image", hint: "Product-only shot (no model)" }
+              - { label: "Product View — Back", name: "productBack", widget: "image" }
+              - { label: "Model View — Front", name: "modelFront", widget: "image", hint: "Model wearing the product" }
+              - { label: "Model View — Back", name: "modelBack", widget: "image" }
+              - { label: "Popularity Score", name: "popularity", widget: "number", value_type: "int", hint: "1–100, for sort-by-popularity" }
+              - { label: "Date Added", name: "dateAdded", widget: "number", value_type: "int", hint: "Higher = more recent (for sort-by-latest)" }
+
+  - name: "syndicate-blog"
+    label: "Syndicate — Blog Posts"
+    label_singular: "Post"
+    description: "All Syndicate blog articles — add, edit, reorder, or archive posts"
+    editor:
+      preview: false
+    files:
+      - name: "posts"
+        label: "All Posts"
+        file: "syndicate/blog.json"
+        description: "Master blog list (JSON array)"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            hint: "Drag to reorder. Remove a post to archive it."
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int", hint: "Must be unique" }
+              - { label: "Category", name: "category", widget: "select", options: ["Gear Guides", "New Drops", "Style", "Community"] }
+              - { label: "Date (display)", name: "date", widget: "string", hint: "e.g. May 2026 · 5 min read" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
+              - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
+
+  # ===================================================================
+  # POWERCRAFT, DESIGN & BUILD, CREATIVE STUDIO
+  # ===================================================================
+  # Not added yet -- those three sites are still static HTML (no JSON
+  # data source to point a collection at). Once one of them is
+  # converted to the data-driven pattern (see HANDOFF.md), add a
+  # "<venture>-products" / "<venture>-blog" collection pair here
+  # following the exact shape above, pointed at
+  # "<venture>/products.json" / "<venture>/blog.json".

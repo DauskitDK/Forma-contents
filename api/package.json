@@ -1,0 +1,7 @@
+{
+  "name": "forma-content-cms-oauth",
+  "private": true,
+  "dependencies": {
+    "netlify-cms-oauth-provider-node": "^2.0.0"
+  }
+}
