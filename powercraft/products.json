@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Slip-On Exhaust — Yamaha Y15ZR",
+      "price": "RM 680",
+      "priceNum": 680,
+      "category": "Exhaust",
+      "desc": "Stainless steel slip-on with heat shield. Deeper note, minimal weight gain.",
+      "img": "/assets/images/global/powercraft1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Full Fairing Kit — Honda CBR150R",
+      "price": "RM 1,200",
+      "priceNum": 1200,
+      "category": "Body",
+      "desc": "ABS plastic full fairing with primer coat. Track-inspired lines for the street.",
+      "img": "/assets/images/global/powercraft2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Shorty Fender Eliminator Kit",
+      "price": "RM 240",
+      "priceNum": 240,
+      "category": "Brackets",
+      "desc": "Billet aluminium fender eliminator with integrated LED plate light. Universal fit.",
+      "img": "/assets/images/global/powercraft3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "LED Projector Headlight — Kapcai Series",
+      "price": "RM 380",
+      "priceNum": 380,
+      "category": "Lighting",
+      "desc": "Drop-in LED projector upgrade. Plug-and-play, no wiring mod needed.",
+      "img": "/assets/images/global/powercraft4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Full System Exhaust — Honda EX5",
+      "price": "RM 950",
+      "priceNum": 950,
+      "category": "Exhaust",
+      "desc": "Header-back stainless system. Significant weight saving over stock.",
+      "img": "/assets/images/global/powercraft5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Seat Cowl — Yamaha R15 V4",
+      "price": "RM 290",
+      "priceNum": 290,
+      "category": "Body",
+      "desc": "Clean single-seat cowl. Compatible with OEM subframe bolt points.",
+      "img": "/assets/images/global/powercraft1.jpg"
+    }
+  ]
+}

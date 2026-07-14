@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "category": "Exhaust",
+      "date": "May 2026 · 5 min read",
+      "title": "How We Design Custom Exhaust Systems for Malaysian Roads",
+      "image": "/assets/images/global/powercraft1.jpg",
+      "body": "<p>Heat, humidity, and urban stop-start riding demand a different engineering approach. We break down the full process behind every Powercraft exhaust — from material choice to final tune.</p>"
+    },
+    {
+      "id": 2,
+      "category": "Exhaust",
+      "date": "Jan 2026 · 5 min read",
+      "title": "Stainless vs Mild Steel Exhaust — Which Is Right for You?",
+      "image": "/assets/images/global/powercraft2.jpg",
+      "body": "<p>A straight comparison on cost, durability, and sound for the everyday Malaysian rider.</p>"
+    },
+    {
+      "id": 3,
+      "category": "Lighting",
+      "date": "Nov 2025 · 4 min read",
+      "title": "LED Headlight Upgrades: What to Know Before You Buy",
+      "image": "/assets/images/global/motorcycle4.avif",
+      "body": "<p>Projector vs reflector housings, lumen output, and the legality question — everything answered in one guide.</p>"
+    },
+    {
+      "id": 4,
+      "category": "Body & Panels",
+      "date": "Oct 2025 · 6 min read",
+      "title": "ABS vs Fibreglass Body Kits — What Works on Malaysian Roads",
+      "image": "/assets/images/global/powercraft3.jpg",
+      "body": "<p>We tested both on the same bike over 6 months of KL commuting. Here's what held up and what didn't.</p>"
+    },
+    {
+      "id": 5,
+      "category": "Rider Guides",
+      "date": "Aug 2025 · 5 min read",
+      "title": "Fender Eliminator Guide: Everything You Need to Know",
+      "image": "/assets/images/global/powercraft4.jpg",
+      "body": "<p>Legal requirements, fitment tips, and the models we currently support — all in one place.</p>"
+    },
+    {
+      "id": 6,
+      "category": "Exhaust",
+      "date": "Jun 2025 · 7 min read",
+      "title": "Full System Build: CB500X Kapcai Series Exhaust Walkthrough",
+      "image": "/assets/images/global/cb500x.webp",
+      "body": "<p>A step-by-step photo log of one of our most popular full system builds — from raw tubing to final weld.</p>"
+    },
+    {
+      "id": 7,
+      "category": "Body & Panels",
+      "date": "Apr 2025 · 4 min read",
+      "title": "How to Fit a Seat Cowl — Installation Guide for the R15 Series",
+      "image": "/assets/images/global/powercraft5.jpg",
+      "body": "<p>A no-tools-wasted walkthrough for fitting a Powercraft seat cowl, with common fitment pitfalls to avoid.</p>"
+    }
+  ]
+}

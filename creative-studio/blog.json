@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "category": "Branding",
+      "date": "May 2026 · 6 min read",
+      "title": "Why Most Malaysian Brands Fail at Consistency (And How to Fix It)",
+      "image": "/assets/images/global/creative1.jpg",
+      "body": "<p>Inconsistent logos, ad-hoc font choices, off-brand social posts — it's not a taste problem, it's a systems problem. Here's how we approach brand consistency as a buildable thing.</p>"
+    },
+    {
+      "id": 2,
+      "category": "UI/UX",
+      "date": "Mar 2026 · 5 min read",
+      "title": "Design Systems 101: Building UI That Scales Without Breaking",
+      "image": "/assets/images/global/creative3.jpg",
+      "body": "<p>Tokens, components, documentation — why a design system isn't a luxury and how to build a lightweight one fast.</p>"
+    },
+    {
+      "id": 3,
+      "category": "Process",
+      "date": "Jan 2026 · 4 min read",
+      "title": "From Brief to Launch: How We Approach Every Brand Project",
+      "image": "/assets/images/global/creative5.jpg",
+      "body": "<p>Discovery, strategy, concepting, refinement, delivery — five stages that every project goes through, no exceptions.</p>"
+    },
+    {
+      "id": 4,
+      "category": "Branding",
+      "date": "Nov 2025 · 5 min read",
+      "title": "Typography in Malaysian Branding — What Actually Works",
+      "image": "/assets/images/global/creative2.jpg",
+      "body": "<p>From Malay script sensibility to global sans-serif defaults — our honest take on typeface choices for local brands trying to reach regional audiences.</p>"
+    },
+    {
+      "id": 5,
+      "category": "Content",
+      "date": "Sep 2025 · 4 min read",
+      "title": "Content Strategy for Small Brands: Less is More",
+      "image": "/assets/images/global/creative4.jpg",
+      "body": "<p>Stop trying to post every day. Here's how to create a lean, high-quality content system that actually builds a brand instead of just filling a feed.</p>"
+    },
+    {
+      "id": 6,
+      "category": "Process",
+      "date": "Jul 2025 · 6 min read",
+      "title": "How We Built the Forma Visual Identity from Scratch",
+      "image": "/assets/images/global/creative1.jpg",
+      "body": "<p>Brand decisions, type choices, and why we chose gold over red for the accent — a candid look at the thinking behind Forma's own identity system.</p>"
+    },
+    {
+      "id": 7,
+      "category": "UI/UX",
+      "date": "May 2025 · 5 min read",
+      "title": "Mobile-First Isn't Optional in Malaysia — Here's the Data",
+      "image": "/assets/images/global/creative3.jpg",
+      "body": "<p>Over 85% of Malaysian web traffic is mobile. If your site isn't designed mobile-first, you're not just losing UX points — you're losing customers.</p>"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "category": "Joinery",
+      "date": "Mar 2026 · 6 min read",
+      "title": "The Garage Build: Custom Joinery for a Rider's Workshop",
+      "image": "/assets/images/global/db1.jpg",
+      "body": "<p>A 12-week project to build a functional, beautiful working space for a KL-based rider collector — tool walls, workbench, and display cabinet all in solid timber.</p>"
+    },
+    {
+      "id": 2,
+      "category": "Materials",
+      "date": "Feb 2026 · 5 min read",
+      "title": "Solid Timber vs Engineered Wood — Which Should You Choose?",
+      "image": "/assets/images/global/db2.jpg",
+      "body": "<p>Both have their place. We break down the honest pros, cons, and cost differences for Malaysian homes.</p>"
+    },
+    {
+      "id": 3,
+      "category": "Furniture",
+      "date": "Jan 2026 · 4 min read",
+      "title": "From Sketch to Installation: How We Approach Every Build",
+      "image": "/assets/images/global/whoweare.jpg",
+      "body": "<p>A look at the six stages from first brief to final handover — and why we don't skip a single one.</p>"
+    },
+    {
+      "id": 4,
+      "category": "Joinery",
+      "date": "Nov 2025 · 7 min read",
+      "title": "Mont Kiara Kitchen Joinery — Full Project Walkthrough",
+      "image": "/assets/images/global/whoweare3.jpg",
+      "body": "<p>From the client brief to final installation: how we designed and built a full modular kitchen in 8 weeks.</p>"
+    },
+    {
+      "id": 5,
+      "category": "Materials",
+      "date": "Sep 2025 · 5 min read",
+      "title": "Wood Finishes Explained: Oil, Lacquer, and Hard Wax",
+      "image": "/assets/images/global/whoweare4.jpg",
+      "body": "<p>Each finish ages differently in Malaysian humidity. Here's what to choose for furniture that gets heavy daily use.</p>"
+    },
+    {
+      "id": 6,
+      "category": "Commercial",
+      "date": "Jul 2025 · 6 min read",
+      "title": "Café Counter Build in Petaling Jaya — Behind the Brief",
+      "image": "/assets/images/global/whoweare2.jpg",
+      "body": "<p>The client wanted industrial-meets-warm. Here's how we translated a mood board into a counter that holds 12-hour daily service.</p>"
+    },
+    {
+      "id": 7,
+      "category": "Furniture",
+      "date": "May 2025 · 5 min read",
+      "title": "Walk-In Wardrobe System — Designing Around How You Actually Dress",
+      "image": "/assets/images/global/whoweare5.jpg",
+      "body": "<p>Custom hanging zones, pull-out drawers, and a full-length mirror — the decisions behind a wardrobe that actually works.</p>"
+    }
+  ]
+}

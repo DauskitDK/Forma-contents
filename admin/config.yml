@@ -77,11 +77,107 @@ collections:
               - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
 
   # ===================================================================
-  # POWERCRAFT, DESIGN & BUILD, CREATIVE STUDIO
+  # POWERCRAFT
   # ===================================================================
-  # Not added yet -- those three sites are still static HTML (no JSON
-  # data source to point a collection at). Once one of them is
-  # converted to the data-driven pattern (see HANDOFF.md), add a
-  # "<venture>-products" / "<venture>-blog" collection pair here
-  # following the exact shape above, pointed at
-  # "<venture>/products.json" / "<venture>/blog.json".
+  - name: "powercraft-products"
+    label: "Powercraft — Products"
+    label_singular: "Product"
+    description: "Powercraft product catalog — add, edit, reorder, or archive products"
+    editor:
+      preview: false
+    files:
+      - name: "products"
+        label: "All Products"
+        file: "powercraft/products.json"
+        description: "Master product list (JSON array)"
+        fields:
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            hint: "Drag to reorder. Remove a product to archive it."
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int", min: 1 }
+              - { label: "Name", name: "name", widget: "string", pattern: [".{3,}", "Must be at least 3 characters"] }
+              - { label: "Price (display)", name: "price", widget: "string", hint: "e.g. RM 680" }
+              - { label: "Price (numeric)", name: "priceNum", widget: "number", hint: "Number only, for sorting — e.g. 680" }
+              - { label: "Category", name: "category", widget: "select", options: ["Exhaust", "Body", "Brackets", "Lighting"] }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Image", name: "img", widget: "image" }
+
+  - name: "powercraft-blog"
+    label: "Powercraft — Blog Posts"
+    label_singular: "Post"
+    description: "All Powercraft blog articles — add, edit, reorder, or archive posts"
+    editor:
+      preview: false
+    files:
+      - name: "posts"
+        label: "All Posts"
+        file: "powercraft/blog.json"
+        description: "Master blog list (JSON array)"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            hint: "Drag to reorder. Remove a post to archive it."
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int", hint: "Must be unique" }
+              - { label: "Category", name: "category", widget: "select", options: ["Exhaust", "Body & Panels", "Lighting", "Rider Guides"] }
+              - { label: "Date (display)", name: "date", widget: "string", hint: "e.g. May 2026 · 5 min read" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
+              - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
+
+  # ===================================================================
+  # DESIGN & BUILD
+  # ===================================================================
+  - name: "design-build-blog"
+    label: "Design & Build — Blog Posts"
+    label_singular: "Post"
+    description: "All Design & Build blog articles — add, edit, reorder, or archive posts"
+    editor:
+      preview: false
+    files:
+      - name: "posts"
+        label: "All Posts"
+        file: "design-build/blog.json"
+        description: "Master blog list (JSON array)"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            hint: "Drag to reorder. Remove a post to archive it."
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int", hint: "Must be unique" }
+              - { label: "Category", name: "category", widget: "select", options: ["Furniture", "Joinery", "Commercial", "Materials"] }
+              - { label: "Date (display)", name: "date", widget: "string", hint: "e.g. May 2026 · 5 min read" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
+              - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
+
+  # ===================================================================
+  # CREATIVE STUDIO
+  # ===================================================================
+  - name: "creative-studio-blog"
+    label: "Creative Studio — Blog Posts"
+    label_singular: "Post"
+    description: "All Creative Studio blog articles — add, edit, reorder, or archive posts"
+    editor:
+      preview: false
+    files:
+      - name: "posts"
+        label: "All Posts"
+        file: "creative-studio/blog.json"
+        description: "Master blog list (JSON array)"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            hint: "Drag to reorder. Remove a post to archive it."
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int", hint: "Must be unique" }
+              - { label: "Category", name: "category", widget: "select", options: ["Branding", "UI/UX", "Content", "Process"] }
+              - { label: "Date (display)", name: "date", widget: "string", hint: "e.g. May 2026 · 5 min read" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
+              - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
