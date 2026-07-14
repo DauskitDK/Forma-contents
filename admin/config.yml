@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: DauskitDK/Forma-Content
+  repo: DauskitDK/Forma-contents
   branch: main
-  base_url: https://forma-content.vercel.app
+  base_url: https://forma-contents.vercel.app
   auth_endpoint: api/begin
   squash_merges: true
 
