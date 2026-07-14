@@ -1,5 +1,5 @@
 # Forma Content — Handoff Note
-**Last updated:** 2026-07-14
+**Last updated:** 2026-07-14 (all 4 ventures converted)
 **Project:** Centralized content repo for all Forma Group ventures
 **Repo:** https://github.com/DauskitDK/Forma-contents.git
 **Local path:** `C:\Users\firda\Forma-contents\`
@@ -30,9 +30,16 @@ Forma-contents/
 ├── syndicate/
 │   ├── products.json      ← migrated from Forma-Syndicatewebsite's _data/products.json
 │   └── blog.json          ← migrated from Forma-Syndicatewebsite's _data/blog.json
+├── powercraft/
+│   ├── products.json
+│   └── blog.json
+├── design-build/
+│   └── blog.json          ← no product catalog for this venture
+├── creative-studio/
+│   └── blog.json          ← no product catalog for this venture
 ├── admin/
 │   ├── index.html         ← Decap CMS entry point
-│   └── config.yml         ← collections: syndicate-products, syndicate-blog (more to add later)
+│   └── config.yml         ← collections: syndicate-{products,blog}, powercraft-{products,blog}, design-build-blog, creative-studio-blog
 ├── api/
 │   ├── begin.js           ← Vercel serverless: starts GitHub OAuth for Decap login
 │   ├── complete.js        ← Vercel serverless: completes OAuth, hands token back to Decap
@@ -40,7 +47,7 @@ Forma-contents/
 └── vercel.json
 ```
 
-**Proof of concept status:** `Forma-Syndicatewebsite`'s `_data/loader.js` has been updated to fetch from this repo via jsDelivr instead of its own local `_data/*.json`. Once both repos are pushed, this is the first live test of the centralized model.
+**Status:** all 4 venture sites (Syndicate, Powercraft, Design & Build, Creative Studio) are converted to the data-driven pattern and fetch their content from this repo via jsDelivr, falling back to a local JSON copy if the CDN is unreachable. Each site's own repo/deployment is otherwise still fully independent.
 
 ---
 
@@ -56,14 +63,17 @@ Not urgent — existing content works fine either way. Worth deciding before rel
 
 ---
 
-## Adding Powercraft / Design & Build / Creative Studio
+## Powercraft / Design & Build / Creative Studio — conversion complete
 
-Those three sites are still static HTML with content hardcoded directly into the page (no JSON data source, unlike Syndicate). To bring one under this CMS:
+All three were converted to the same data-driven pattern Syndicate already used:
 
-1. Convert its content to the data-driven pattern first — extract hardcoded blog/product content into `<venture>/blog.json` (and `<venture>/products.json` if it sells products), add a small `loader.js` fetching those files, update the HTML to render from fetched data (mirror what Syndicate already does)
-2. Add matching JSON files here in `Forma-contents/<venture>/`
-3. Add a `<venture>-products` / `<venture>-blog` collection pair to `admin/config.yml`, copying the shape of the `syndicate-*` collections
-4. Point that site's `loader.js` at the jsDelivr URL for its own venture folder here
+1. Hardcoded blog/product HTML extracted into `<venture>/blog.json` (+ `products.json` for Powercraft only — Design & Build and Creative Studio don't sell products)
+2. Each site got its own `assets/js/loader.js` (CDN fetch + local-fallback pattern) and a matching local copy of the JSON under `assets/data/`
+3. Product/blog listing + homepage preview sections rewritten to render from fetched data instead of static markup
+4. Matching JSON added here in `Forma-contents/<venture>/`, and a `<venture>-products` / `<venture>-blog` collection pair added to `admin/config.yml`
+5. All four venture repos and this repo have been committed and pushed to their respective branches
+
+Note: Creative Studio's "UI/UX" category needed an explicit slug map (`{'UI/UX': 'ux', ...}`) since naive `.toLowerCase()` would produce the invalid CSS-selector-unsafe slug `ui/ux`.
 
 ---
 
