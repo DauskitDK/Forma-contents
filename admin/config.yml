@@ -44,11 +44,11 @@ collections:
               - { label: "Available Sizes", name: "sizes", widget: "list", hint: "e.g. S, M, L, XL — or ONE SIZE" }
               - { label: "Size Guide Image", name: "sizeGuide", widget: "image" }
               - { label: "Grid / Thumbnail Image", name: "img", widget: "image", hint: "Shown in bento grid on homepage" }
+              - { label: "Gallery Images", name: "imgs", widget: "list", field: { label: "Image URL", name: "src", widget: "image" }, hint: "Up to 5 product photos for the detail gallery" }
               - { label: "Product View — Front", name: "productFront", widget: "image", hint: "Product-only shot (no model)" }
               - { label: "Product View — Back", name: "productBack", widget: "image" }
               - { label: "Model View — Front", name: "modelFront", widget: "image", hint: "Model wearing the product" }
               - { label: "Model View — Back", name: "modelBack", widget: "image" }
-              - { label: "Gallery Images", name: "imgs", widget: "list", field: { label: "Image URL", name: "src", widget: "image" }, hint: "Up to 5 product photos for the detail gallery", collapsed: true }
               - { label: "Popularity Score", name: "popularity", widget: "number", value_type: "int", hint: "1–100, for sort-by-popularity" }
               - { label: "Date Added", name: "dateAdded", widget: "number", value_type: "int", hint: "Higher = more recent (for sort-by-latest)" }
 
