@@ -20,7 +20,7 @@ collections:
     label_singular: "Product"
     description: "Syndicate product catalog — add, edit, reorder, or archive products"
     editor:
-      preview: false
+      preview: true
     files:
       - name: "products"
         label: "All Products"
@@ -57,7 +57,7 @@ collections:
     label_singular: "Post"
     description: "All Syndicate blog articles — add, edit, reorder, or archive posts"
     editor:
-      preview: false
+      preview: true
     files:
       - name: "posts"
         label: "All Posts"

@@ -1,0 +1,181 @@
+/* Syndicate brand tokens — mirrors assets/css/main.css in DauskitDK/Forma-Syndicatewebsite.
+   Kept self-contained here since this repo has no site stylesheet of its own. */
+:root {
+  --forma-accent: #c8a96e;
+  --font-heading: "Kanit", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --radius-md: 8px;
+  --color-bg: #0a0a0a;
+  --color-surface: #141414;
+  --color-surface2: #1e1e1e;
+  --color-text: #f5f5f5;
+  --color-muted: #9a9a9a;
+  --color-border: rgba(255, 255, 255, 0.07);
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.fs-preview {
+  padding: 28px 24px 48px;
+  font-family: var(--font-body);
+}
+
+.fs-preview-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--forma-accent);
+  margin-bottom: 20px;
+}
+
+.fs-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+/* ---- Products grid ---- */
+.fs-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.fs-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.fs-card-media {
+  aspect-ratio: 4 / 5;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-surface2);
+  position: relative;
+}
+
+.fs-card-media-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+}
+
+.fs-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #0c0b08;
+}
+
+.fs-badge-new { background: var(--forma-accent); }
+.fs-badge-sale { background: #e2665a; color: #1a0e0c; }
+
+.fs-card-body { padding: 12px 14px 16px; }
+
+.fs-card-cat {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 4px;
+}
+
+.fs-card-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  margin-bottom: 6px;
+  color: var(--color-text);
+}
+
+.fs-card-price {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+
+.fs-card-price-orig {
+  font-weight: 500;
+  font-size: 0.76rem;
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+/* ---- Blog list ---- */
+.fs-blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 640px;
+}
+
+.fs-blog-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.fs-blog-media {
+  background-size: cover;
+  background-position: center;
+  background-color: var(--color-surface2);
+  min-height: 100px;
+}
+
+.fs-blog-body { padding: 14px 16px 14px 0; }
+
+.fs-blog-cat {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forma-accent);
+  margin-bottom: 4px;
+}
+
+.fs-blog-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.fs-blog-date {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  margin-bottom: 8px;
+}
+
+.fs-blog-excerpt {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+}
