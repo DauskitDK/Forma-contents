@@ -1,15 +1,18 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Syndicate Mesh Riding Jacket — Urban Series",
-      "price": "RM 380",
-      "priceNum": 380,
-      "originalPrice": null,
-      "originalPriceNum": null,
-      "category": "Outerwear",
+      "modelFront": "/syndicate/assets/coach-medium-front.jpg",
       "badge": "new",
-      "desc": "Engineered for Malaysian heat and humidity. Mesh ventilation panels, CE-rated armour inserts at shoulders and elbows, reflective piping for night visibility. A silhouette sharp enough to wear off the bike.",
+      "img": "/syndicate/assets/coach-medium-front.jpg",
+      "price": "RM 120",
+      "name": "Syndicate Coach Riding Jacket — Urban Series",
+      "originalPriceNum": null,
+      "imgs": [
+        "/syndicate/assets/coach-medium-front.jpg",
+        "/syndicate/assets/coach-medium-behind.jpg"
+      ],
+      "modelBack": "/syndicate/assets/coach-medium-behind.jpg",
+      "desc": "Made for everyday rides and daily wear\n\n- Lightweight, breathable, and easy to wear, the Syndicate Coach Riding Jacket keeps you comfortable in Malaysia's hot weather. Its water-resistant fabric dries quickly after light rain, while the classic coach jacket design looks just as good on and off the bike.\n\nKey Features\n\n- Lightweight and breathable\n- Water-resistant, quick-drying fabric\n- 2 inner pockets & 2 outer pockets\n- Comfortable for Malaysia's hot weather\n- Classic coach jacket style for everyday wear",
       "sizes": [
         "S",
         "M",
@@ -17,21 +20,15 @@
         "XL",
         "XXL"
       ],
-      "sizeGuide": "assets/images/global/baju1-e.webp",
-      "img": "assets/images/global/baju1-a.webp",
-      "imgs": [
-        "assets/images/global/baju1-a.webp",
-        "assets/images/global/baju1-b.webp",
-        "assets/images/global/baju1-c.webp",
-        "assets/images/global/baju1-d.webp",
-        "assets/images/global/baju1-e.webp"
-      ],
-      "productFront": "assets/images/global/baju5-b.webp",
-      "productBack": "assets/images/global/baju5-a.webp",
-      "modelFront": "assets/images/global/baju5-d.webp",
-      "modelBack": "assets/images/global/baju5-e.webp",
+      "dateAdded": 2,
       "popularity": 95,
-      "dateAdded": 3
+      "productBack": "/syndicate/assets/coach-back.jpg",
+      "originalPrice": null,
+      "productFront": "/syndicate/assets/coach-front.jpg",
+      "id": 1,
+      "sizeGuide": "",
+      "priceNum": 120,
+      "category": "Outerwear"
     },
     {
       "modelFront": "assets/images/global/baju1-e.webp",
