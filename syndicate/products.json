@@ -469,6 +469,22 @@
       "sizeGuide": "assets/images/global/baju3-c.webp",
       "priceNum": 245,
       "category": "Outerwear"
+    },
+    {
+      "modelFront": "/syndicate/assets/sizing.jpg",
+      "badge": "sale",
+      "price": "999",
+      "name": "test",
+      "originalPriceNum": 800,
+      "imgs": [
+        "/syndicate/assets/black-medium-ls-back.jpg"
+      ],
+      "desc": "ghjghjghjghjghjgnmbnjkghuukyu",
+      "originalPrice": "800",
+      "productFront": "/syndicate/assets/sg-11134209-7rdvw-mdd2qdhs34zd3a.png",
+      "id": 123,
+      "priceNum": 999,
+      "category": "Headwear"
     }
   ]
 }
