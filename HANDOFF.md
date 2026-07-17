@@ -90,3 +90,36 @@ Note: Creative Studio's "UI/UX" category needed an explicit slug map (`{'UI/UX':
 5. Set Vercel env vars: `OAUTH_CLIENT_ID`, `OAUTH_CLIENT_SECRET`, `COMPLETE_URL`, `ORIGIN` — same pattern as `Forma-Syndicatewebsite`'s existing OAuth setup
 6. Update `admin/config.yml`'s `base_url` to the real deployed URL once known
 7. Visit `/admin`, sign in with GitHub, confirm you can edit Syndicate's products/posts and see the change reflected on the live Syndicate site after the jsDelivr cache refreshes (a few minutes — jsDelivr caches aggressively; use the `@main` alias for latest, or manually purge via `https://purge.jsdelivr.net/gh/DauskitDK/Forma-contents@main/<path>` after an edit if you need it instantly)
+
+---
+
+## Session Handoff — Forma-contents — CMS repair + sitewide image-resolution fix — 2026-07-17
+
+### Completed
+- Diagnosed and fixed `https://forma-contents.vercel.app` returning `404` on the bare root — added a `redirects` rule in `vercel.json` (`/` → `/admin/`), since the deployment only ships `admin/index.html`, no root page.
+- Diagnosed and fixed a `FUNCTION_INVOCATION_FAILED` crash on GitHub login — root cause was zero environment variables configured on the Vercel project (`OAUTH_CLIENT_ID`, `OAUTH_CLIENT_SECRET`, `COMPLETE_URL`, `ORIGIN` — step 5 above had never actually been done). Registered a new GitHub OAuth App, set all five vars, redeployed. Verified `/api/begin` returns a clean `302` to GitHub's authorize endpoint.
+- Ran a full end-to-end CMS test: edited a product through `/admin`, confirmed the editorial-workflow draft branch (`cms/syndicate-products/products`), published it, confirmed the merge to `main`, purged the jsDelivr cache, confirmed the change live on the Syndicate site. Reverted the test edit afterward.
+- That test surfaced a real, sitewide bug: `admin/config.yml`'s `media_folder`/`public_folder` is set **globally** (`syndicate/assets`), not per-collection — every CMS image upload lands there regardless of which venture's collection is being edited, but each venture site's frontend only ever resolved images against its own local `assets/` folder. New CMS uploads 404'd on every site.
+- Fixed it in all four venture repos' data loaders (`Forma-Syndicatewebsite/_data/loader.js`, `Forma-Powercraftwebsite`, `Forma-DesignBuildwebsite`, `Forma-CreativeStudiowebsite` — all under `assets/js/loader.js` except Syndicate) — added a `resolveImg()` helper that rewrites `/syndicate/assets/...` paths through the jsDelivr CDN, leaves existing local image paths untouched.
+- Also fixed a stale-dev-server bug unrelated to this repo but discovered while starting this work: the local Claude Code `SessionStart` hook (`~/.claude/neo-brain-session-start.sh`) declared a port "already running" based on TCP occupancy alone with no content check — now verifies the response against `package.json`'s name / page `<title>` before reusing a port.
+
+### Key Decisions
+- Never entered the OAuth client secret directly, even when offered — credentials are handled by the account owner only, in their own terminal, regardless of convenience.
+- Fixed the image-resolution gap by patching each site's loader rather than reorganizing `config.yml`'s `media_folder` — smaller, safer change. Per-collection media folders (so each venture's uploads land in its own folder) is still open, not done.
+- Left images embedded inside blog post body markdown (via the media picker, not the dedicated `image` field) unresolved — out of scope for a field-level fix.
+
+### Remaining Tasks
+1. **Per-venture `media_folder` in `admin/config.yml`** — would route each venture's CMS uploads into its own folder (`powercraft/assets/`, etc.) instead of everything landing under `syndicate/assets/`. Offered, not requested yet.
+2. **Markdown-embedded blog images** — only the dedicated hero `image` field resolves through the CDN fix; an image dropped directly into a post body via the media picker still 404s.
+3. Site owner has since resumed normal CMS use (new product photo uploads + a real product edit visible in commit history as of this handoff) — working as intended, no action needed, just confirms the fix holds under real use.
+
+### Notes for Next Session
+- Local working clone for admin/CLI work on this repo: `C:\Users\firda\AppData\Local\Temp\fc-clone\Forma-contents` — already `vercel link`-ed to the `forma-contents` Vercel project, so `vercel env` / `vercel deploy` work directly from there.
+- The four venture repos and their actual branch names (none of them are plain `main`): Powercraft → `forma/powercraft-main`, Design & Build → `forma/DB-main`, Creative Studio → `forma/CIT-main`. `Forma-Syndicatewebsite`'s fix went out via PR: https://github.com/DauskitDK/Forma-Syndicatewebsite/pull/1 (branch `claude/forma-contents-preview-2fc2a4` → `main`, not yet merged as of this handoff).
+- `Forma-contents` itself is the only one of the five repos touched this session that uses plain `main`.
+
+### Branch
+main
+
+### Repo
+https://github.com/DauskitDK/Forma-contents
