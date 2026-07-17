@@ -123,3 +123,44 @@ main
 
 ### Repo
 https://github.com/DauskitDK/Forma-contents
+
+---
+
+## Session Handoff — Forma Syndicate — Blog fixes, CMS preview, sizes-crash fix — 2026-07-17
+
+*(This handoff spans two repos worked in the same session: `Forma-Syndicatewebsite` and `Forma-contents`. Appended to both.)*
+
+### Completed
+- Synced local `Forma-Syndicatewebsite` to `origin/main`; fixed the local dev server (was started with `serve -s`, which forces SPA-fallback and silently served `index.html` for every route, including `/products` and `/blog`) — restarted without `-s`.
+- Diagnosed why CMS edits at `forma-contents.vercel.app/admin` weren't showing on the live site: a separate tool ("opencode") had already switched the site's data fetch from jsDelivr (hours of cache) to `raw.githubusercontent.com` (no cache) mid-session — confirmed it was live and working, flagged that `raw.githubusercontent.com` has no CDN/edge caching and may need revisiting if traffic grows.
+- Built and shipped custom Decap CMS preview templates for `syndicate-products` and `syndicate-blog` in `Forma-contents` (`admin/preview.js`, `admin/preview.css`, `editor.preview: true` in `config.yml`) — editors now see a live branded product grid / journal card list instead of Decap's default blank preview pane.
+- Fixed a real crash: `products.html` and `product-detail.html` assumed every product has a `sizes` array. A CMS-added product with no sizes threw mid-render, silently aborting the whole page render — which is why pagination past that product's page looked frozen. Null-guarded 4 call sites in both files.
+- Fixed three bugs surfaced by a user screenshot of the blog page:
+  - `.section-padding`'s `margin: 100px 0` was silently zeroing out Bootstrap's `.container` auto-centering wherever the two classes combined — changed to `margin: Ndp auto`. Affects the equivalent blog pages on all four ventures (Powercraft, Design & Build, Creative Studio use the same class pattern), though only Syndicate's copy was touched this session.
+  - `blog/index.html` / `blog/post.html` used bare relative links (`post.html?id=X`) that 404'd because Vercel's `cleanUrls` serves `/blog` without a trailing slash, so same-directory relative links resolved one level too high (site root). Switched to root-absolute paths.
+  - Theme toggle updated `data-theme` and `localStorage` correctly but the page never visually changed — root cause was `body`'s `transition: background-color .3s ease` getting permanently stuck when the color source is a CSS custom property swapped via an attribute-selector change (confirmed by forcing `transition: none`, which fixed it instantly). Removed the transition.
+- Explored reshaping the `syndicate-products` entry editor (not just the preview pane) — reordered/grouped the image fields and collapsed the gallery list by default, shipped it, then reverted it back to the original field order at the user's request.
+- Discussed feasibility of matching a future Figma design against the CMS admin: the preview pane is fully achievable (it's our own component), individual field widgets are achievable via `CMS.registerWidget`, but the overall app shell (entry list, top toolbar, sidebar) is Decap's own internals and isn't realistically restylable to match a custom design — that would mean migrating to a different CMS (TinaCMS/Sanity/Payload), not customizing Decap further.
+
+### Key Decisions
+- Dropped a dead-end `forma/cms` branch that had been built against `Forma-Syndicatewebsite`'s own `admin/` folder — that folder no longer exists on `main` (deleted in commit `9d84c33` when content moved to the centralized `Forma-contents` repo). The real CMS lives in `Forma-contents`; the equivalent work was rebuilt there instead, matching its actual collection names (`syndicate-products`/`syndicate-blog`), file paths (`syndicate/*.json`), and media folder (`syndicate/assets`).
+- Declined to guess at Decap's internal (likely hashed) CSS class names for deeper editor-shell restyling — asked the user for a live DevTools element inspection first rather than ship speculative CSS that might do nothing.
+- Reverted the field-reordering/collapse change on request, no reason given — treated as final, not re-litigated.
+
+### Remaining Tasks
+1. Deeper editor CSS compaction (grid-laying the 4 image widgets) — blocked on the user sharing a DevTools element inspection, since Claude won't log into the CMS to check selectors itself.
+2. User will share a Figma file or screenshot for a possible CMS customization pass later — scope (preview-only vs. custom widget vs. full CMS migration) still open, to be decided once shared.
+3. The "test" product (`id: 16` in `Forma-contents/syndicate/products.json`) has no sizes, description, or images — user will clean it up themselves via the CMS.
+
+### Notes for Next Session
+- `Forma-contents` was cloned this session to `C:\Users\firda\AppData\Local\Temp\fc_cms` — the scratchpad path was too long for git on Windows (`Filename too long` on pack objects); use a short path for any future clone of this repo.
+- Git Bash on this machine path-mangles URLs starting with `/` (MSYS conversion, e.g. turns `/blog` into a Windows path mid-command) — prefix with `export MSYS_NO_PATHCONV=1` before curling root-relative paths.
+- `Forma-Syndicatewebsite`'s `admin/`, `_data/`, and `api/` folders are gone as of `main` — don't resurrect them; all content management is centralized in `Forma-contents` now.
+- Watch for other tools/agents touching these repos mid-session (happened this session via "opencode") — check `git log origin/main` for unexpected upstream commits before assuming your last known state is current.
+
+### Branch
+main (both repos)
+
+### Repos
+- https://github.com/DauskitDK/Forma-Syndicatewebsite
+- https://github.com/DauskitDK/Forma-contents
