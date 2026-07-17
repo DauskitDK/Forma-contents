@@ -1,21 +1,15 @@
 {
   "products": [
     {
-      "modelFront": "assets/images/global/baju5-d.webp",
-      "badge": "sale",
-      "img": "assets/images/global/baju1-a.webp",
-      "price": "RM 999",
-      "name": "Testing CMS",
+      "id": 1,
+      "name": "Syndicate Mesh Riding Jacket — Urban Series",
+      "price": "RM 380",
+      "priceNum": 380,
+      "originalPrice": null,
       "originalPriceNum": null,
-      "imgs": [
-        "assets/images/global/baju1-a.webp",
-        "assets/images/global/baju1-b.webp",
-        "assets/images/global/baju1-c.webp",
-        "assets/images/global/baju1-d.webp",
-        "assets/images/global/baju1-e.webp"
-      ],
-      "modelBack": "assets/images/global/baju5-e.webp",
-      "desc": "TEST LOERM OIPSUIM Engineered for Malaysian heat and humidity. Mesh ventilation panels, CE-rated armour inserts at shoulders and elbows, reflective piping for night visibility. A silhouette sharp enough to wear off the bike.",
+      "category": "Outerwear",
+      "badge": "new",
+      "desc": "Engineered for Malaysian heat and humidity. Mesh ventilation panels, CE-rated armour inserts at shoulders and elbows, reflective piping for night visibility. A silhouette sharp enough to wear off the bike.",
       "sizes": [
         "S",
         "M",
@@ -23,15 +17,21 @@
         "XL",
         "XXL"
       ],
-      "dateAdded": 3,
-      "popularity": 95,
-      "productBack": "assets/images/global/baju5-a.webp",
-      "originalPrice": null,
+      "sizeGuide": "assets/images/global/baju1-e.webp",
+      "img": "assets/images/global/baju1-a.webp",
+      "imgs": [
+        "assets/images/global/baju1-a.webp",
+        "assets/images/global/baju1-b.webp",
+        "assets/images/global/baju1-c.webp",
+        "assets/images/global/baju1-d.webp",
+        "assets/images/global/baju1-e.webp"
+      ],
       "productFront": "assets/images/global/baju5-b.webp",
-      "id": 1,
-      "sizeGuide": "/syndicate/assets/sg-11134209-7rdvw-mdd2qdhs34zd3a.png",
-      "priceNum": 999,
-      "category": "Outerwear"
+      "productBack": "assets/images/global/baju5-a.webp",
+      "modelFront": "assets/images/global/baju5-d.webp",
+      "modelBack": "assets/images/global/baju5-e.webp",
+      "popularity": 95,
+      "dateAdded": 3
     },
     {
       "modelFront": "assets/images/global/baju1-e.webp",
