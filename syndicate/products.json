@@ -473,16 +473,22 @@
     {
       "modelFront": "/syndicate/assets/sizing.jpg",
       "badge": "sale",
+      "img": "/syndicate/assets/black-medium-front.jpg",
       "price": "999",
       "name": "test",
       "originalPriceNum": 800,
       "imgs": [
         "/syndicate/assets/black-medium-ls-back.jpg"
       ],
+      "modelBack": "/syndicate/assets/coach-medium-behind.jpg",
       "desc": "ghjghjghjghjghjgnmbnjkghuukyu",
+      "dateAdded": 20,
+      "popularity": 97,
+      "productBack": "/syndicate/assets/black-full-front.jpg",
       "originalPrice": "800",
       "productFront": "/syndicate/assets/sg-11134209-7rdvw-mdd2qdhs34zd3a.png",
-      "id": 123,
+      "id": 16,
+      "sizeGuide": "/syndicate/assets/coach-medium-front.jpg",
       "priceNum": 999,
       "category": "Headwear"
     }
