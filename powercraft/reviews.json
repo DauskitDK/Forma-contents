@@ -1,0 +1,9 @@
+{
+  "reviews": [
+    { "author": "Ahmad Rizal", "rating": 5, "text": "Best custom parts workshop in Malaysia. Exhaust sounds incredible and the finish quality is unmatched.", "time": "March 2026", "photo": "" },
+    { "author": "Faiz Othman", "rating": 5, "text": "Best custom parts workshop in Malaysia. The guys know their stuff and are passionate about motorcycles.", "time": "October 2025", "photo": "" },
+    { "author": "Hakim Roslan", "rating": 5, "text": "Ordered a fender eliminator — arrived fast, fit perfectly. Will be back for the full exhaust system.", "time": "December 2025", "photo": "" },
+    { "author": "Darren Lim", "rating": 4, "text": "Great product quality. Took a week longer than expected but worth every ringgit.", "time": "January 2026", "photo": "" },
+    { "author": "Priya Menon", "rating": 5, "text": "Custom exhaust sounds amazing. Definitely one of the best workshops in KL.", "time": "November 2025", "photo": "" }
+  ]
+}

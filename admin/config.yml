@@ -76,6 +76,28 @@ collections:
               - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
               - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
 
+  - name: "syndicate-reviews"
+    label: "Syndicate — Reviews"
+    label_singular: "Review"
+    description: "Customer reviews shown on the Syndicate site and aggregated on the main Forma site"
+    editor:
+      preview: false
+    files:
+      - name: "reviews"
+        label: "All Reviews"
+        file: "syndicate/reviews.json"
+        description: "Master review list (JSON array)"
+        fields:
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            hint: "Drag to reorder. Remove a review to archive it."
+            fields:
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5 }
+              - { label: "Product", name: "product", widget: "string", required: false, hint: "Which product this review is about" }
+              - { label: "Review Text", name: "text", widget: "text" }
+
   # ===================================================================
   # POWERCRAFT
   # ===================================================================
@@ -128,6 +150,29 @@ collections:
               - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
               - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
 
+  - name: "powercraft-reviews"
+    label: "Powercraft — Reviews"
+    label_singular: "Review"
+    description: "Customer reviews shown on the Powercraft site and aggregated on the main Forma site"
+    editor:
+      preview: false
+    files:
+      - name: "reviews"
+        label: "All Reviews"
+        file: "powercraft/reviews.json"
+        description: "Master review list (JSON array)"
+        fields:
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            hint: "Drag to reorder. Remove a review to archive it."
+            fields:
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5 }
+              - { label: "Date (display)", name: "time", widget: "string", required: false, hint: "e.g. March 2026" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Review Text", name: "text", widget: "text" }
+
   # ===================================================================
   # DESIGN & BUILD
   # ===================================================================
@@ -155,6 +200,29 @@ collections:
               - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
               - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
 
+  - name: "design-build-reviews"
+    label: "Design & Build — Reviews"
+    label_singular: "Review"
+    description: "Customer reviews shown on the Design & Build site and aggregated on the main Forma site"
+    editor:
+      preview: false
+    files:
+      - name: "reviews"
+        label: "All Reviews"
+        file: "design-build/reviews.json"
+        description: "Master review list (JSON array)"
+        fields:
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            hint: "Drag to reorder. Remove a review to archive it."
+            fields:
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5 }
+              - { label: "Date (display)", name: "time", widget: "string", required: false, hint: "e.g. March 2026" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Review Text", name: "text", widget: "text" }
+
   # ===================================================================
   # CREATIVE STUDIO
   # ===================================================================
@@ -180,4 +248,28 @@ collections:
               - { label: "Date (display)", name: "date", widget: "string", hint: "e.g. May 2026 · 5 min read" }
               - { label: "Title", name: "title", widget: "string" }
               - { label: "Hero Image", name: "image", widget: "image", hint: "Shown in article cards and post hero" }
+              - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }
+
+  - name: "creative-studio-reviews"
+    label: "Creative Studio — Reviews"
+    label_singular: "Review"
+    description: "Customer reviews shown on the Creative Studio site and aggregated on the main Forma site"
+    editor:
+      preview: false
+    files:
+      - name: "reviews"
+        label: "All Reviews"
+        file: "creative-studio/reviews.json"
+        description: "Master review list (JSON array)"
+        fields:
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            hint: "Drag to reorder. Remove a review to archive it."
+            fields:
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number", value_type: "int", min: 1, max: 5 }
+              - { label: "Date (display)", name: "time", widget: "string", required: false, hint: "e.g. March 2026" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+              - { label: "Review Text", name: "text", widget: "text" }
               - { label: "Body", name: "body", widget: "markdown", hint: "Write your article. Full Markdown supported." }

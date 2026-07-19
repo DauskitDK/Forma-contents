@@ -1,0 +1,10 @@
+{
+  "reviews": [
+    { "author": "Farhan Azizi", "rating": 5, "text": "The team at Forma Creative really understood our brand vision. The identity system they built is clean, consistent, and already turning heads. Highly recommend.", "time": "April 2026", "photo": "" },
+    { "author": "Liyana Hassan", "rating": 5, "text": "Our website redesign was handled end to end — strategy, design, and development. The result speaks for itself. Professional team with real creative depth.", "time": "March 2026", "photo": "" },
+    { "author": "Marcus Ong", "rating": 5, "text": "Best design studio we've worked with in KL. They push back when something's off and deliver work that actually performs. That's rare.", "time": "February 2026", "photo": "" },
+    { "author": "Siti Aisyah", "rating": 4, "text": "Great communication throughout the project. Timeline was tight but they delivered. The brand refresh was exactly what we needed heading into our relaunch.", "time": "January 2026", "photo": "" },
+    { "author": "Reza Aminuddin", "rating": 5, "text": "Forma Creative built our entire content system from scratch — templates, photography direction, the works. Our social engagement doubled within a month.", "time": "December 2025", "photo": "" },
+    { "author": "Cheryl Ng", "rating": 5, "text": "A studio that genuinely cares about the work they put out. They presented three distinct directions and walked us through the thinking behind each. That level of care shows.", "time": "November 2025", "photo": "" }
+  ]
+}
